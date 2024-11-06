@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Futura', 'Nunito', sans-serif; /* Futura as the primary, Nunito as fallback */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
