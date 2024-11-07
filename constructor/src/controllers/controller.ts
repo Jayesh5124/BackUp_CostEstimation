@@ -41,12 +41,10 @@ export const createConstructor = async (req: Request, res: Response) => {
 export const allConstructors = async (req: Request, res: Response) => {
   try {
     const constructors = await Constructor.find({});
-    
-    // Optional: If you want to send a specific count in the response
-    const count = constructors.length;
+
 
     // Sending constructors and count
-    sendResponse(res, 200, { count, constructors });
+    sendResponse(res, 200, constructors );
   } catch (error: any) {
     console.error('Error fetching constructors:', error);
     sendResponse(res, 500, { error: 'Error fetching constructors', details: error.message });

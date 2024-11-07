@@ -40,9 +40,11 @@ const PropertyBid: React.FC<PropertyBidProps> = ({ onViewDetails, onEstimate }) 
   useEffect(() => {
     const fetchReports = async () => {
       setIsLoading(true);
-      console.log(sessionStorage.getItem('userEmail'));
+      // console.log(sessionStorage.getItem('userEmail'));
       
       try {
+       
+        
         const response = await axios.get(`http://localhost:3006/api/reports/client/${sessionStorage.getItem('userEmail')}`);
         setReports(response.data.data);
       } catch (error) {
@@ -112,6 +114,7 @@ const PropertyBid: React.FC<PropertyBidProps> = ({ onViewDetails, onEstimate }) 
       
       const response = await axios.get(`http://localhost:3006/api/reports/${selectedReportId}`);
       const reportData = response.data.data;
+      console.log(reportData);
       const fetchedMongoId = reportData.mongoId;
       
 
